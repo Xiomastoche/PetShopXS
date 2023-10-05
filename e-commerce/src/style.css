@@ -1,0 +1,66 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    background-color: rgb(231, 192, 234);
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+}
+
+.containerBrand{
+    width: 15%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 90px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.containerList {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+li {
+    text-decoration: none;
+    padding-left: 20px;
+    list-style: none;
+}
+
+li a {
+    color: rgb(6, 6, 6);
+}
+
+li a:hover {
+    color: rgb(246, 126, 6);
+    font-weight: bolder;
+}
+
+.carrito {
+    width:40px;
+}
+
+.containerCarrito {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+}
