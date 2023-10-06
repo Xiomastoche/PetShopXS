@@ -1,5 +1,8 @@
-import './style.css';
-import NavBar from './components/NavBar/NavBar';
+//estilos
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+//componentes
+import NavBar from './components/NavBar';
 
 
 function App() {
@@ -7,7 +10,6 @@ function App() {
   return (
     <>
       <NavBar></NavBar>
-      <container></container>
     </>
   )
 }
