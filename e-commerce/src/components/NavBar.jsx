@@ -1,35 +1,45 @@
+import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from '../img/logopet.png';
-import carrito from '../img/carrito.png';
+
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
+import logo from '../img/logoveg.png';
+import carrito from '../img/shop.png';
 
 const NavBar = () => {
 
   return (
     <>
-        <nav className='navbar fixed-top navbar-expand-lg bg-primary'>
-            <div className="container-fluid">
-                <div className='row'>
-                    <div className='col mx-2'>
-                    <a className='navbar-brand' href="#">
-                        <img src={logo} alt="" width="90" className='img-fluid'/>
-                    </a>
-                    </div>
-                    <div className='col'>
-                    <ul className='navbar-nav'>
-                        <li className='nav-item'> <a className='nav-link' href="#"> Inicio </a></li>
-                        <li className='nav-item'> <a className='nav-link' href="#"> Productos </a></li>
-                        <li className='nav-item'> <a className='nav-link' href="#"> Contacto </a></li>
-                    </ul>
-                    </div>
-                    <div className='col'>
-                    <a href="#">
-                        <img src={carrito} alt="" width="40" className='cimg-fluid'/>
-                    </a> 
-                    </div>
-                </div>
-                
-            </div>
-        </nav>
+        <Navbar expand="md" sticky="top" bg="warning" data-bs-theme="primary">
+        <Container fluid>
+        <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src={logo}
+              width="100"
+              className="d-inline-block align-top"
+            />
+        </Navbar.Brand>
+        <Nav className="justify-content-center fw-bolder">
+            <Nav.Link href="#">Inicio</Nav.Link>
+            <Nav.Link href="#">Productos</Nav.Link>
+            <Nav.Link href="#">Contacto</Nav.Link>
+        </Nav>
+        <Nav className="justify-content-end">
+            <a href="#">
+            <img
+              alt=""
+              src={carrito}
+              width="40"
+              className="img-fluid"
+            />
+            </a>
+            
+        </Nav>
+        </Container>
+      </Navbar>
     </> 
   )
 }
