@@ -23,22 +23,15 @@ const NavBar = () => {
               className="d-inline-bl ock mx-2"
             />
         </Navbar.Brand>
+        
         <Nav className="justify-content-end fw-bolder" id="responsive-navbar-nav">
           <Nav.Link className='px-3' href="#">Inicio</Nav.Link>
           <Nav.Link className='px-3' href="#">Productos</Nav.Link>
           <Nav.Link className='px-3' href="#">Contacto</Nav.Link>
-          <Nav className='px-3 border-start border-dark'>
-            <a href="#">
-            <img
-              alt="carrito"
-              src={carrito}
-              width="40"
-              className="img-fluid"
-            />
-            </a>
-            <CartWidget />
-          </Nav>
         </Nav>
+
+        <CartWidget />
+
         </Container>
       </Navbar>
     </> 

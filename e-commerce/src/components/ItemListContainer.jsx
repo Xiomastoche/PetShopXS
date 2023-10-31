@@ -1,13 +1,26 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/esm/Container';
+import { useState, useEffect } from 'react'
+import { getProducts } from '../asyncMock'
+import ItemList from './ItemList'
+
+const ItemListContainer = () => {
+  const [products, setProducts] = useState ([])
+
+  useEffect (() => {
+    getProducts()
+      .then(response => {
+        setProducts(response)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }, [])
 
 
-const ItemListContainer = (props) => {
   return (
-    <Container>
-        <h2 className='pt-4'>{props.mensaje}</h2>
-    </Container>
+    <div>
+        <ItemList products= {products} />
+    </div>
   )
 }
 
