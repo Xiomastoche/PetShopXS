@@ -8,7 +8,7 @@ const ItemList = ({ products }) => {
 
   return (
     <Container>
-    <Row xs={1} md={3} className="g-4">
+    <Row xs={1} md={2} lg={3} className="g-3">
       {products.map(prod => <Item key={prod.id} {...prod} />)}
     </Row>
     </Container>

@@ -4,7 +4,7 @@ import carrito from '../img/shop.png';
 const CartWidget = () => {
   return (
     <div>
-        <a href="#">
+        <a href="#" style={{ textDecoration: 'none', color: 'inherit', marginRight: '10px' }} >
         <img src={carrito}  alt="" width="40"/>
         0
         </a>

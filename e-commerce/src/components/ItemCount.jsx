@@ -22,13 +22,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
   return (
     <Container className='Counter text-center'>
     <Row className='Controls pb-1'>
-        <Col> <Button variant='primary' onClick={decrement}> - </Button></Col>
+        <Col> <Button variant='secondary px-3' onClick={decrement}> - </Button></Col>
         <Col> <h4 className='Number'> {quantity} </h4></Col>
-        <Col> <Button variant='primary' onClick={increment}> + </Button></Col>
+        <Col> <Button variant='secondary px-3' onClick={increment}> + </Button></Col>
     </Row>
     <Row>
         <Col>
-            <Button variant='secondary' onClick={() => onAdd(quantity)} disabled={!stock}>
+            <Button variant='success px-5' onClick={() => onAdd(quantity)} disabled={!stock}>
                 Agregar al carrito
             </Button>
         </Col>
