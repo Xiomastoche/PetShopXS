@@ -5,7 +5,6 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 
 
-
 function App() {
 
   return (
@@ -18,7 +17,6 @@ function App() {
           <Route path='/item/:itemId' element= {<ItemDetailContainer/>} />
           <Route path='*' element= {<h1>404 NOT FOUND</h1>} />
         </Routes>
-      
       </BrowserRouter>
 
     </>

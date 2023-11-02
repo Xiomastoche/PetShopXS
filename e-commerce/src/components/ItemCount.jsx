@@ -28,7 +28,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     </Row>
     <Row>
         <Col>
-            <Button variant='success px-5' onClick={() => onAdd(quantity)} disabled={!stock}>
+            <Button variant='primary px-5 mt-2' onClick={() => onAdd(quantity)} disabled={!stock}>
                 Agregar al carrito
             </Button>
         </Col>

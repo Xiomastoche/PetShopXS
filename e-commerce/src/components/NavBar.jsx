@@ -15,28 +15,32 @@ const NavBar = () => {
 
   return (
     <>
-        <Navbar expand="md" sticky="top" bg="secondary" data-bs-theme="dark">
+        <Navbar expand="md" sticky="top" bg="secondary">
         <Container fluid>
         <Link to='/'>
             <img
               alt="logo"
               src={logo}
               width="180"
-              className="d-inline-bl ock mx-2"
+              className="d-inline-block mx-2"
             /> 
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className='px-3 fw-bolder justify-content-end' id="responsive-navbar-nav">
-          <Nav className='border-end px-3'>
-            <NavDropdown title="Productos" id="collapsible-nav-dropdown">
+          <Link to='/' className='px-4' style={{ textDecoration: 'none', color: 'inherit'}} > Inicio</Link>
+          <Nav>
+            <NavDropdown title="Productos" id="collapsible-nav-dropdown" style={{ textDecoration: 'none', color: 'inherit'}}>
               <NavDropdown.Item >
-                <NavLink to={`/category/celular`} style={{ textDecoration: 'none', color: 'inherit', marginRight: '10px' }} className={({ isActive}) => isActive ? 'ActiveOption': 'Option'} > Celulares </NavLink>
+                <NavLink to={`/category/celular`} style={{ textDecoration: 'none', color: 'inherit'}} className={({ isActive}) => isActive ? 'ActiveOption': 'Option'} > Celulares </NavLink>
               </NavDropdown.Item>
               <NavDropdown.Item >
-                <NavLink to={`/category/audio`} style={{ textDecoration: 'none', color: 'inherit', marginRight: '10px' }} className={({ isActive}) => isActive ? 'ActiveOption': 'Option'} > Audio </NavLink>
+                <NavLink to={`/category/audio`} style={{ textDecoration: 'none', color: 'inherit'}} className={({ isActive}) => isActive ? 'ActiveOption': 'Option'} > Audio </NavLink>
               </NavDropdown.Item>
               <NavDropdown.Item >
                 <NavLink to={`/category/tablet`} style={{ textDecoration: 'none', color: 'inherit' }} className={({ isActive}) => isActive ? 'ActiveOption': 'Option'} > Tablets </NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item >
+                <NavLink to={`/category/notebook`} style={{ textDecoration: 'none', color: 'inherit' }} className={({ isActive}) => isActive ? 'ActiveOption': 'Option'} > Notebooks </NavLink>
               </NavDropdown.Item>
               <NavDropdown.Item>
                 <NavLink to={`/`} style={{ textDecoration: 'none', color: 'inherit', marginRight: '10px' }} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'} > Todos los productos </NavLink>

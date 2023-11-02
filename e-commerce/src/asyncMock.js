@@ -52,7 +52,25 @@ const products = [
       category: 'tablet',
       price: 300000,
       stock: 35,
-    }
+    },
+    {
+      id: '7',
+      name: 'Apple Macbook Pro 14',
+      img: 'https://www.coopehogar.coop/media/ch/publico/articulos/1/f/c/1fcbf1e7f32b5ba98a401f4436e73ee0',
+      description: 'Notebook Apple Macbook Pro 14 de 512GB',
+      category: 'notebook',
+      price: 2000000,
+      stock: 10,
+    },
+    {
+      id: '8',
+      name: 'Notebook HP G7',
+      img: 'https://images.fravega.com/f500/27c9470da876dce97c2975af744ac0a2.jpg',
+      description: 'Notebook HP G7 Core i3 1TB',
+      category: 'notebook',
+      price: 88200,
+      stock: 15,
+    },
 ];
 
 export const getProducts = () => {

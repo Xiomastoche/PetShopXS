@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ItemCount from './ItemCount';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 
-const ItemDetail = ({ name, img, category, description, price, stock}) => {
+
+const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
   const [quantityAdded, setQuantityAdded] = useState (0)
 
   const handleOnAdd = (quantity) => {
@@ -20,7 +21,7 @@ const ItemDetail = ({ name, img, category, description, price, stock}) => {
             <Card.Body>
                 <Card.Text className="text-muted">Categoria: {category} </Card.Text>
                 <Card.Text>Descripcion: {description} </Card.Text>
-                <Card.Text className='fw-semibolder'>Precio: ${price} </Card.Text>
+                <Card.Text className='fw-bolder fs-5'>Precio: ${price} </Card.Text>
             </Card.Body>
             <Card.Footer className="text-dark">
               {
