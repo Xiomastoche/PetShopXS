@@ -1,39 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+import {ButtonGroup, Button} from 'react-bootstrap';
+
 
 const ItemCount = ({stock, initial, onAdd}) => {
-    const [quantity, setQuantity] = useState(initial)
+    const [quantity, setQuantity] = useState(initial);
 
     const increment = () => {
         if (quantity < stock) {
-            setQuantity(quantity+1)
+            setQuantity(quantity + 1)
         }
     }
     const decrement = () => {
         if (quantity > 1) {
-            setQuantity(quantity-1)
+            setQuantity(quantity - 1)
         }
     }
 
   return (
-    <Container className='Counter text-center'>
-    <Row className='Controls pb-1'>
-        <Col> <Button variant='secondary px-3' onClick={decrement}> - </Button></Col>
-        <Col> <h4 className='Number'> {quantity} </h4></Col>
-        <Col> <Button variant='secondary px-3' onClick={increment}> + </Button></Col>
-    </Row>
-    <Row>
-        <Col>
-            <Button variant='primary px-5 mt-2' onClick={() => onAdd(quantity)} disabled={!stock}>
-                Agregar al carrito
-            </Button>
-        </Col>
-    </Row>
-    </Container>
+    <div className='border-top pt-3'>
+    
+        <ButtonGroup size="md" className="mb-2 mt-4">
+            <Button variant='secondary px-3 rounded-0' onClick={decrement}> - </Button>
+            <h4 className='Number px-4'> {quantity} </h4>
+            <Button variant='secondary px-3 rounded-0' onClick={increment}> + </Button>
+        </ButtonGroup>
+        <Button variant='info px-5 mt-3 mx-4 rounded-0' size='md' onClick={() => onAdd(quantity)} disabled={!stock}>
+            Agregar al carrito
+        </Button>
+        
+    </div>
   )
 }
 

@@ -1,26 +1,35 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { getProductById } from '../asyncMock'
+import { getFirestore, doc, getDoc } from 'firebase/firestore'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
-    const [products, setProducts] = useState(null)
+    const [product, setProduct] = useState(null)
     const {itemId} = useParams()
 
-    useEffect (() => {
-        getProductById(itemId)
-            .then(response => {
-                setProducts(response)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-    }, [itemId])
+    useEffect(() => {
+        const fetchProduct = async () => {
+          try {
+            const db = getFirestore();
+            const queryDoc = doc( db, 'products', itemId );
+            const productDoc = await getDoc(queryDoc);
+    
+            if (productDoc.exists()) {
+              setProduct({ id: productDoc.id, ...productDoc.data() });
+            }
+          } catch (error) {
+            console.log(error);
+          }
+        };
+    
+        fetchProduct();
+    }, [itemId]);
+    
 
   return (
     <div>
-        <ItemDetail {...products} />
+        {product && <ItemDetail {...product} />}
     </div>
   )
 }

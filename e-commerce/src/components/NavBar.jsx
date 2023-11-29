@@ -1,13 +1,8 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 import CartWidget from './CartWidget';
 import { Link, NavLink } from 'react-router-dom';
-
 import logo from '../img/logoT.png';
 
 
@@ -15,17 +10,18 @@ const NavBar = () => {
 
   return (
     <>
-        <Navbar expand="md" sticky="top" bg="secondary">
+        <Navbar expand="md" sticky="top" bg="secondary" className='mb-5'>
         <Container fluid>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Link to='/'>
             <img
               alt="logo"
               src={logo}
               width="180"
-              className="d-inline-block mx-2"
+              className="d-inline-block mx-2 "
             /> 
         </Link>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        
         <Navbar.Collapse className='px-3 fw-bolder justify-content-end' id="responsive-navbar-nav">
           <Link to='/' className='px-4' style={{ textDecoration: 'none', color: 'inherit'}} > Inicio</Link>
           <Nav>
@@ -48,7 +44,7 @@ const NavBar = () => {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-        <Nav>
+        <Nav className='justify-content-end'>
           <CartWidget />
         </Nav>
         </Container>
